@@ -6,6 +6,6 @@ using namespace std;
 int main() {
 	char n;
 	cin >> n;
-	if (n >= 65 and n <=90) cout << char(32 + n) << endl;
-	else cout << char(n - 32) << endl; 
+	if (n >= 'A' and n <= 'Z') cout << char(n + ('a' - 'A')) << endl;
+	else cout << char(n - ('a' - 'A')) << endl; 
 }
