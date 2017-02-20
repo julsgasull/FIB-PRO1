@@ -3,36 +3,31 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-	int hour, min, sec;
-	cin >> hour >> min >> sec;
-	
-	if (sec == 59) {
-		if (min == 59) {
-			if (hour == 24) {
-				sec = 00;
-				min = 00;
-				hour = 00;
-			}
-			else {
-				sec = 00;
-				min = 00;
-				hour = hour + 1;
-			}
-		}
-		else {
-			sec = 00;
-			min = min + 1;
-		}
-	}
-	else sec = sec + 1;
-	
-	if (hour < 10) cout << '0' << hour << ':';
-	else cout << hour << ':';
-	
-	if (min < 10) cout << '0' << min << ':';
-	else cout << min << ':';
-	
-	if (sec < 10) cout << '0' << sec << endl;
-	else cout << sec << endl;
+int main () {
+  
+  int h, m, s;
+  cin >> h >> m >> s;
+  
+  s = s + 1;
+  
+  if (s == 60) {
+    s = 0;
+    m = m + 1;
+  
+    if (m == 60) {
+      m = 0;
+      h = h + 1;
+  
+      if (h == 24) h = 0;
+    }
+  }
+  
+  if (h < 10) cout << '0';
+  cout << h << ':';
+  
+  if (m < 10) cout << '0';
+  cout << m << ':';
+  
+  if (s < 10) cout << '0';
+  cout << s << endl;
 }
